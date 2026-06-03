@@ -1,4 +1,4 @@
-# Genetic-algorithm-ml-playground# Genetic Algorithm ML Playground
+# Genetic Algorithm ML Playground
 
 This project explores how genetic algorithms can be used for machine learning optimization tasks.
 
