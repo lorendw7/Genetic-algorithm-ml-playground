@@ -1,45 +1,62 @@
-# 学习路线 (Learning Path)
+# Learning Path
 
-一步步从遗传算法基础走到「用 GA 做机器学习优化」。
+A step-by-step path from genetic algorithm (GA) basics to "using GA for machine
+learning optimization", ending with a classic GA project: solving the TSP.
 
-## 环境准备（一次性）
+> **Teaching mode:** explanations are bilingual (中文 + English). **All code is
+> written by the learner** — each lesson gives concepts, a spec, and hints; the
+> learner implements it, then we review together.
+
+## Environment setup (one-time)
 
 ```powershell
-# 1. 创建并激活 conda 环境
+# 1. Create and activate the conda environment
 conda create -y -n ga-ml python=3.11 numpy scikit-learn matplotlib pandas
 conda activate ga-ml
 
-# 2. 安装 GA 专用库
+# 2. Install GA-specific libraries
 pip install -r requirements.txt
 
-# 3. 验证
-python -c "import numpy, sklearn, pygad, deap; print('环境 OK')"
+# 3. Verify
+python -c "import numpy, sklearn, pygad, deap; print('Environment OK')"
 ```
 
-> 注：这里特意没装 jupyterlab。它在 Windows 上常因「文件路径超过 260 字符」
-> 解压失败（InvalidArchiveError）。本项目用 `python xxx.py` 直接跑脚本即可，
-> 不需要 notebook。如果以后确实想用，可单独 `pip install notebook`。
+> Note: JupyterLab is intentionally not installed. On Windows it often fails to
+> extract due to the 260-character path limit (InvalidArchiveError). This project
+> runs plain scripts with `python xxx.py`, so a notebook is not needed. If you
+> want one later, install it separately with `pip install notebook`.
 
-之后每次开始学习，只需在终端运行：`conda activate ga-ml`
+Each time you start, just run: `conda activate ga-ml`
 
-## 课程列表
+## Lessons
 
-| 课 | 文件 | 学什么 |
-|----|------|--------|
-| 1 | `lessons/01_ga_from_scratch.py` | 手写 GA，理解“选择/交叉/变异”五步骤 |
-| 2 | `lessons/02_ga_with_pygad.py` | 用 PyGAD 库重做第 1 课，看库怎么简化 |
-| 3 | `lessons/03_feature_selection.py` | 用 GA 做特征选择（机器学习第一站） |
-| 4 | `lessons/04_hyperparam_tuning.py` | 用 GA 给 RandomForest 调超参 |
-| 5 | `lessons/05_ga_vs_random.py` | GA 搜索 vs 随机搜索，谁更强？ |
+| # | File                                | What you learn                                  |
+| - | ----------------------------------- | ----------------------------------------------- |
+| 1 | `lessons/01_ga_from_scratch.py`     | Hand-write a GA; understand the 5 core steps    |
+| 2 | `lessons/02_ga_with_pygad.py`       | Redo Lesson 1 with PyGAD; see how a library helps |
+| 3 | `lessons/03_feature_selection.py`   | Use GA for feature selection (first ML task)    |
+| 4 | `lessons/04_hyperparam_tuning.py`   | Use GA to tune RandomForest hyperparameters     |
+| 5 | `lessons/05_ga_vs_random.py`        | GA search vs random search — which wins?        |
+| 6 | `lessons/06_tsp.py`                 | Capstone: GA solves the Travelling Salesman Problem |
 
-## 运行方式
+## How to run
 
 ```powershell
 conda activate ga-ml
 python lessons/01_ga_from_scratch.py
 ```
 
-## 怎么学最有效
-1. **先跑通**：直接运行脚本，看输出和图。
-2. **再读码**：脚本里每行都有中文注释，对照着理解。
-3. **后动手**：改超参数（种群大小、变异率、代数），观察结果变化。
+## How to learn effectively
+
+1. **Understand the concept** — read the bilingual explanation for the lesson.
+2. **Write the code yourself** — implement it from the spec and hints.
+3. **Run and observe** — look at the output and the plots.
+4. **Experiment** — change the hyperparameters (population size, mutation rate,
+   number of generations) and watch how the results change.
+
+## Notes
+
+- Plots a lesson writes (e.g. `lessons/01_result.png`) are git-ignored practice
+  output — re-run the script to regenerate them.
+- Lessons 2–6 are added as the course progresses; only the files present in
+  `lessons/` have been reached so far.

@@ -1,3 +1,3 @@
-# GA 专用库（conda 里没有，用 pip 装）
-pygad>=3.0      # 最易上手的遗传算法库，第 2 课用
-deap>=1.4       # 更灵活强大的进化计算框架，进阶用
+# GA libraries (not in conda; install with pip)
+pygad>=3.0      # Easiest GA library to start with; used in Lesson 2
+deap>=1.4       # More flexible/powerful evolutionary computation framework; advanced use
